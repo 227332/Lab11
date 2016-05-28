@@ -19,23 +19,21 @@ public class RiversDAO {
 
 		try {
 			Connection conn = DBConnect.getConnection();
-
 			PreparedStatement st = conn.prepareStatement(sql);
-
 			ResultSet res = st.executeQuery();
 
 			while (res.next()) {
+				rivers.add(new River(res.getInt("id"), res.getString("name")));
 			}
-			rivers.add(new River(res.getInt("id"), res.getString("name")));
 
 			conn.close();
+
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// e.printStackTrace();
 			throw new RuntimeException();
 		}
 
 		return rivers;
-
 	}
 
 	public List<Flow> getAllFlows(List<River> rivers) {
@@ -45,9 +43,7 @@ public class RiversDAO {
 
 		try {
 			Connection conn = DBConnect.getConnection();
-
 			PreparedStatement st = conn.prepareStatement(sql);
-
 			ResultSet res = st.executeQuery();
 
 			while (res.next()) {
@@ -56,13 +52,13 @@ public class RiversDAO {
 			}
 
 			conn.close();
+
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// e.printStackTrace();
 			throw new RuntimeException();
 		}
 
 		return flows;
-
 	}
 
 	public static void main(String[] args) {
