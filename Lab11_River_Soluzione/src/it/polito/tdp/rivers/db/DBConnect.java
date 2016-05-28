@@ -22,7 +22,7 @@ import java.util.concurrent.Executor;
 
 public class DBConnect {
 
-	private final static String jdbcURL = "jdbc:mysql://localhost/rivers?user=root&password=";
+	private final static String jdbcURL = "jdbc:mysql://localhost/rivers?user=root&password=root";
 
 	private static class PersistentConnection implements Connection {
 
@@ -324,7 +324,7 @@ public class DBConnect {
 			c = DriverManager.getConnection(jdbcURL);
 			c = new PersistentConnection(c); // inibisce il metodo close()
 		} catch (SQLException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			throw new RuntimeException("Impossibile connettersi al database", e);
 		}
 
