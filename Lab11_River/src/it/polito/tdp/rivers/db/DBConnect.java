@@ -22,7 +22,7 @@ import java.util.concurrent.Executor;
 
 public class DBConnect {
 
-	private final static String jdbcURL = "jdbc:mysql://localhost/rivers?user=root&password=";
+	private final static String jdbcURL = "jdbc:mysql://localhost/rivers?user=root";
 
 	private static class PersistentConnection implements Connection {
 

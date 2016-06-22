@@ -13,6 +13,9 @@ public class River {
 		this.id = id;
 	}
 
+	/*
+	 * OSS: nota che il costruttore non popola la lista flows, perciò poi devo farlo io
+	 */
 	public River(int id, String name) {
 		this.id = id;
 		this.name = name;
