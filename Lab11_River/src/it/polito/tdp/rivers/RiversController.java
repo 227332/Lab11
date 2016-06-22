@@ -97,8 +97,10 @@ public class RiversController {
     @FXML
     void doSimula(ActionEvent event) {
     	//RICORDA: in una ComboBox si fa così il check per vedere se è stato
-    	//selezionato un suo elemento
-    	River r=boxRiver.getSelectionModel().getSelectedItem();
+    	//selezionato un suo elemento:
+    	//- o si usa boxRiver.getValue()==null
+    	//- o si usa boxRiver.getSelectionModel().getSelectedItem()==null
+    	River r=boxRiver.getValue();
     	if(r==null){
     		txtResult.setText("Errore: seleziona un Fiume per la simulazione!");
     		return;
